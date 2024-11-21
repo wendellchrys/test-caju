@@ -1,6 +1,7 @@
+import { RegistrationUser } from "~/schemas/registrationUser";
 
-import * as S from "./styles";
 import RegistrationCard from "../RegistrationCard";
+import * as S from "./styles";
 
 const allColumns = [
   { status: 'REVIEW', title: "Pronto para revisar" },
@@ -8,28 +9,31 @@ const allColumns = [
   { status: 'REPROVED', title: "Reprovado" },
 ];
 
-type Props = {
-  registrations?: any[];
+type CollumnsProps = {
+  registrations: RegistrationUser[];
 };
-const Collumns = (props: Props) => {
+
+const Collumns: React.FC<CollumnsProps> = ({ registrations }: CollumnsProps) => {
   return (
     <S.Container>
-      {allColumns.map((collum) => {
+      {allColumns.map((column) => {
+        const columnRegistrations = registrations.filter(
+          (registration) => registration.status === column.status
+        );
+
         return (
-          <S.Column status={collum.status} key={collum.title}>
+          <S.Column status={column.status} key={column.title}>
             <>
-              <S.TitleColumn status={collum.status}>
-                {collum.title}
+              <S.TitleColumn status={column.status}>
+                {column.title}
               </S.TitleColumn>
               <S.CollumContent>
-                {props?.registrations?.map((registration) => {
-                  return (
-                    <RegistrationCard
-                      data={registration}
-                      key={registration.id}
-                    />
-                  );
-                })}
+                {columnRegistrations.map((registration) => (
+                  <RegistrationCard
+                    data={registration}
+                    key={registration.id}
+                  />
+                ))}
               </S.CollumContent>
             </>
           </S.Column>
@@ -38,4 +42,5 @@ const Collumns = (props: Props) => {
     </S.Container>
   );
 };
+
 export default Collumns;

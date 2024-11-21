@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { _IconButtonStyled } from "~/components/Buttons/IconButton";
+
 import Button from "~/components/Buttons";
+import { _IconButtonStyled } from "~/components/Buttons/IconButton";
 
 
 export const Container = styled.div`
@@ -27,4 +28,15 @@ export const Card = styled.div`
   ${Button}{
     align-self: flex-end;
   }
+`;
+
+export const ContainerTextField = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Error = styled.div`
+  color: #CC0000;
+  font-size: 14px;
+  margin-bottom: 2px;
 `;

@@ -15,6 +15,16 @@ A tela de `Cadastro` exibe um formulário simples que será utilizado para criar
 
 ![Screenshot 2024-06-11 at 11 48 47 AM](https://github.com/caju-beneficios/caju-front-teste-1/assets/31169925/bbbb211c-165f-40e5-b2af-61adafd61398)
 
+## Novas Libs Instaladas
+
+- Zod: Utilizei o Zod para criar validações nos formulários de maneira profissional e consistente
+- React Hot Toast: Utilizei esta lib para exibir notificações atraentes de respostas da api ao usuário.
+
+## Utils
+
+- maskCpf: útil criado para gerar a máscara do cpf enquanto o usuário digita os números
+- validateCpf: útil criado para fazer a validação do cpf
+
 ## Apresentanção do problema
 
 O desafio é aprimorar o código existente e implementar as funcionalidades que estão incompletas, use a sua experiência para identificar e propor soluções para os problemas encontrados.
