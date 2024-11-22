@@ -24,8 +24,11 @@ const DashboardPage: React.FC = () => {
       const validatedData = response.data.map((item: any) => registrationUserSchema.parse(item));
       setRegistrations(validatedData);
       setFilteredRegistrations(validatedData);
+
+      //simulando demora do servidor
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
     } catch (error) {
-      console.error("Erro ao buscar registros:", error);
       toast.error("Erro ao buscar registros.");
     } finally {
       setIsLoading(false);

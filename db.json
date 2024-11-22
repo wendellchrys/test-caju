@@ -6,7 +6,7 @@
       "email": "filipe@caju.com.br",
       "cpf": "78502270001",
       "admissionDate": "22/10/2023",
-      "status": "REPROVED"
+      "status": "APPROVED"
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "email": "jose@caju.com.br",
       "cpf": "78502270002",
       "admissionDate": "22/10/2023",
-      "status": "REPROVED"
+      "status": "REVIEW"
     },
     {
       "id": "3",

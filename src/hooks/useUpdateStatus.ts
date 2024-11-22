@@ -1,7 +1,10 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 
+import { STATUS_LABELS } from "~/constants";
 import { useStatusUpdateContext } from "~/contexts/statusUpdateContext";
+
+type StatusKey = keyof typeof STATUS_LABELS;
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -11,7 +14,7 @@ export const useUpdateStatus = () => {
 
   const updateStatus = async (
     data: { id: string; [key: string]: any },
-    newStatus: string
+    newStatus: StatusKey
   ) => {
     try {
       setIsLoading(true);
@@ -30,11 +33,11 @@ export const useUpdateStatus = () => {
         throw new Error("Erro ao atualizar status.");
       }
 
-      toast.success(`Status atualizado para ${newStatus}`);
-      setLastUpdated(new Date().toISOString()); 
+      const statusLabel = STATUS_LABELS[newStatus];
+      toast.success(`Status atualizado para ${statusLabel}`);
+      setLastUpdated(new Date().toISOString());
     } catch (err) {
       toast.error("Erro ao atualizar o status.");
-      console.error("erro", err);
     } finally {
       setIsLoading(false);
     }

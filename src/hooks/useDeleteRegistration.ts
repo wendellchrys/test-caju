@@ -25,7 +25,6 @@ export const useDeleteRegistration = () => {
       setLastUpdated(new Date().toISOString());
     } catch (err) {
       toast.error("Erro ao deletar o registro.");
-      console.error("Erro ao deletar:", err);
     } finally {
       setIsDeleting(false);
     }
