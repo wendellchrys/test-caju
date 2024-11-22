@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { HiOutlineArrowLeft } from "react-icons/hi";
-import { useHistory } from "react-router-dom";
 import { ZodError } from "zod";
 
 import Button from "~/components/Buttons";
 import { IconButton } from "~/components/Buttons/IconButton";
 import TextField from "~/components/TextField";
-import routes from "~/router/routes";
+import { useGoToHome } from "~/hooks/useGoToHome";
 import { newUser, newUserSchema } from "~/schemas/newUser";
 import { maskCpf } from "~/utils";
 
@@ -16,10 +15,8 @@ import * as S from "./styles";
 
 
 const NewUserPage = () => {
-  const history = useHistory();
-  const goToHome = () => {
-    history.push(routes.dashboard);
-  };
+
+  const goToHome = useGoToHome();
 
   const [formData, setFormData] = useState<newUser>({
     employeeName: "",
@@ -28,6 +25,7 @@ const NewUserPage = () => {
     admissionDate: "",
     status: "REVIEW",
   });
+
 
   const [errors, setErrors] = useState<Partial<Record<keyof newUser, string>>>({});
 
@@ -44,7 +42,14 @@ const NewUserPage = () => {
 
   const handleSubmit = async () => {
     try {
-      newUserSchema.parse(formData);
+      const formattedData = {
+        ...formData,
+        admissionDate: formData.admissionDate
+          ? formData.admissionDate.split("-").reverse().join("/")
+          : "",
+      };
+
+      newUserSchema.parse(formattedData);
 
       setIsSubmitting(true);
       setErrors({});
@@ -54,7 +59,7 @@ const NewUserPage = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ ...formData, cpf: formData.cpf.replace(/\D/g, "") }),
+        body: JSON.stringify({ ...formattedData, cpf: formattedData.cpf.replace(/\D/g, "") }),
       });
 
       if (!response.ok) {
@@ -66,7 +71,7 @@ const NewUserPage = () => {
         email: "",
         cpf: "",
         admissionDate: "",
-        status: "",
+        status: "REVIEW",
       });
       toast.success("Usuário cadastrado com sucesso!");
       setTimeout(() => {
@@ -92,6 +97,7 @@ const NewUserPage = () => {
       setIsSubmitting(false);
     }
   };
+
 
   return (
     <S.Container>

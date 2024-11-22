@@ -2,74 +2,42 @@
   "registrations": [
     {
       "id": "1",
-      "admissionDate": "22/10/2023",
-      "email": "filipe@caju.com.br",
       "employeeName": "Filipe Marins",
-      "status": "REVIEW",
-      "cpf": "78502270001"
+      "email": "filipe@caju.com.br",
+      "cpf": "78502270001",
+      "admissionDate": "22/10/2023",
+      "status": "REPROVED"
     },
     {
       "id": "2",
-      "admissionDate": "22/10/2023",
-      "email": "jose@caju.com.br",
       "employeeName": "José Leão",
-      "status": "REPROVED",
-      "cpf": "78502270002"
-    },
-    {
+      "email": "jose@caju.com.br",
+      "cpf": "78502270002",
       "admissionDate": "22/10/2023",
-      "email": "luiz@caju.com.br",
-      "employeeName": "Luiz Filho",
-      "status": "APPROVED",
-      "cpf": "56642105087",
-      "id": "3"
+      "status": "REPROVED"
     },
     {
-      "id": "522b",
-      "employeeName": "Benedito Martin Vieira",
-      "email": "benedito-vieira72@gmx.com",
-      "cpf": "08665909940",
-      "admissionDate": "1990-01-01",
-      "status": "REVIEW"
+      "id": "3",
+      "employeeName": "Luiz Filho",
+      "email": "luiz@caju.com.br",
+      "cpf": "56642105087",
+      "admissionDate": "22/10/2023",
+      "status": "APPROVED"
     },
     {
       "id": "da73",
       "employeeName": "Ayla Jennifer",
       "email": "ayla_jennifer_fogaca@iname.com",
       "cpf": "96120683488",
-      "admissionDate": "2020-02-01",
-      "status": "REVIEW"
+      "admissionDate": "01/02/2020",
+      "status": "REPROVED"
     },
     {
-      "id": "b7e3",
-      "employeeName": "aww as",
-      "email": "teste@sdsd.co",
-      "cpf": "00353838012",
-      "admissionDate": "2024-11-19",
-      "status": "REVIEW"
-    },
-    {
-      "id": "0a74",
-      "employeeName": "Allana Catarina Rodrigues",
-      "email": "allana_rodrigues@sfranconsultoria.com.br",
-      "cpf": "37765161431",
-      "admissionDate": "2024-11-25",
-      "status": "REVIEW"
-    },
-    {
-      "id": "14b2",
-      "employeeName": "Caio Enzo Julio Moraes",
-      "email": "caio_enzo_moraes@uniube.br",
-      "cpf": "77336275915",
-      "admissionDate": "2024-11-28",
-      "status": "REVIEW"
-    },
-    {
-      "id": "d8aa",
-      "employeeName": "César Elias Igor Fernandes",
-      "email": "cesar_fernandes@spamgourmet.com",
-      "cpf": "24968113579",
-      "admissionDate": "2024-10-29",
+      "id": "abb8",
+      "employeeName": "Ana Priscila Sales",
+      "email": "anapriscilasales@nacirembalagens.com.br",
+      "cpf": "42296116337",
+      "admissionDate": "30/11/2024",
       "status": "REVIEW"
     }
   ]
