@@ -3,20 +3,20 @@ import { RegistrationUser } from "~/schemas/registrationUser";
 import { RegistrationCard } from "../RegistrationCard";
 import * as S from "./styles";
 
-const allColumns = [
+const allCollumns = [
     { status: 'REVIEW', title: "Pronto para revisar" },
     { status: 'APPROVED', title: "Aprovado" },
     { status: 'REPROVED', title: "Reprovado" },
 ];
 
-type CollumnsProps = {
+type ColumnsProps = {
     registrations: RegistrationUser[];
 };
 
-export const Collumns = ({ registrations }: CollumnsProps) => {
+export const Columns = ({ registrations }: ColumnsProps) => {
     return (
         <S.Container>
-            {allColumns.map((column) => {
+            {allCollumns.map((column) => {
                 const columnRegistrations = registrations.filter(
                     (registration) => registration.status === column.status
                 );

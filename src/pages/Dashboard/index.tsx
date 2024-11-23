@@ -2,11 +2,11 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
-import { Loading } from "~/components/Loading";
+import { Loading } from "~/components";
 import { useStatusUpdateContext } from "~/contexts/statusUpdateContext";
 import { RegistrationUser, registrationUserSchema } from "~/schemas/registrationUser";
 
-import Collumns from "./components/Columns";
+import { Columns } from "./components/";
 import { SearchBar } from "./components/Searchbar";
 import * as S from "./styles";
 
@@ -58,7 +58,7 @@ const DashboardPage: React.FC = () => {
   return (
     <S.Container>
       <SearchBar handleSearch={handleSearch} handleRefresh={fetchRegistrations} />
-      <Collumns registrations={filteredRegistrations} />
+      <Columns registrations={filteredRegistrations} />
     </S.Container>
   );
 };

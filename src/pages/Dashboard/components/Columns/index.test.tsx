@@ -4,18 +4,18 @@ import { render, screen } from "@testing-library/react";
 
 import { RegistrationUser } from "~/schemas/registrationUser";
 
-import { Collumns } from ".";
+import { Columns } from ".";
 
 jest.mock("../RegistrationCard", () => ({
     __esModule: true,
-    default: ({ data }: { data: RegistrationUser }) => (
+    RegistrationCard: ({ data }: { data: RegistrationUser }) => (
         <div data-testid="registration-card">
             <span>{data.employeeName}</span>
         </div>
     ),
 }));
 
-describe("Components:: Collumns", () => {
+describe("Components:: Columns", () => {
     const mockRegistrations: RegistrationUser[] = [
         { id: "1", cpf: "42296116337", employeeName: "Nome1 Sobrenome1", email: "nome@dominio.com", admissionDate: "2021-01-01", status: "REVIEW" },
         { id: "2", cpf: "42296116337", employeeName: "Nome2 Sobrenome2", email: "nome2@dominio.com", admissionDate: "2021-02-01", status: "APPROVED" },
@@ -23,7 +23,7 @@ describe("Components:: Collumns", () => {
     ];
 
     it("Should render columns with correct titles", () => {
-        render(<Collumns registrations={mockRegistrations} />);
+        render(<Columns registrations={mockRegistrations} />);
 
         expect(screen.getByText("Pronto para revisar")).toBeInTheDocument();
         expect(screen.getByText("Aprovado")).toBeInTheDocument();
@@ -31,7 +31,7 @@ describe("Components:: Collumns", () => {
     });
 
     it("Should render registration cards in the correct columns", () => {
-        render(<Collumns registrations={mockRegistrations} />);
+        render(<Columns registrations={mockRegistrations} />);
 
         const reviewColumn = screen.getByText("Pronto para revisar").closest("div");
         const approvedColumn = screen.getByText("Aprovado").closest("div");
@@ -43,7 +43,7 @@ describe("Components:: Collumns", () => {
     });
 
     it("Should render no registration cards if no registrations are provided", () => {
-        render(<Collumns registrations={[]} />);
+        render(<Columns registrations={[]} />);
 
         expect(screen.queryByTestId("registration-card")).not.toBeInTheDocument();
     });
