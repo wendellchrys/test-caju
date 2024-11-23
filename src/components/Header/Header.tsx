@@ -1,14 +1,10 @@
 import * as S from './styles';
 
-const Header: React.FC = () => {
-
-
+export const Header = () => {
     return (
         <S.Header>
             <h1>Caju Front Teste</h1>
             <p>Modificado por Wendell Christian</p>
         </S.Header>
     );
-};
-
-export default Header;
+}

@@ -3,9 +3,8 @@ import toast from "react-hot-toast";
 import { HiOutlineArrowLeft } from "react-icons/hi";
 import { ZodError } from "zod";
 
-import Button from "~/components/Buttons";
+import { Button, TextField } from "~/components";
 import { IconButton } from "~/components/Buttons/IconButton";
-import TextField from "~/components/TextField";
 import { useGoToHome } from "~/hooks/useGoToHome";
 import { newUser, newUserSchema } from "~/schemas/newUser";
 import { maskCpf } from "~/utils";

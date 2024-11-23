@@ -11,7 +11,7 @@ import { SearchBar } from "./components/Searchbar";
 import * as S from "./styles";
 
 const DashboardPage: React.FC = () => {
-  const apiUrl = import.meta.env.VITE_API_URL;
+  const apiUrl = process.env.VITE_API_URL;
   const { lastUpdated } = useStatusUpdateContext();
   const [registrations, setRegistrations] = useState<RegistrationUser[]>([]);
   const [filteredRegistrations, setFilteredRegistrations] = useState<RegistrationUser[]>([]);

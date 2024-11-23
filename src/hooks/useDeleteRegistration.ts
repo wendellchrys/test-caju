@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 
 import { useStatusUpdateContext } from "~/contexts/statusUpdateContext";
 
-const apiUrl = import.meta.env.VITE_API_URL;
+const apiUrl = process.env.VITE_API_URL;
 
 export const useDeleteRegistration = () => {
   const [isDeleting, setIsDeleting] = useState(false);

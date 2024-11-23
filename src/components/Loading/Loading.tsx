@@ -4,7 +4,7 @@ export const Loading = () => {
     return (
         <S.Overlay>
             <S.LoadingContainer>
-                <S.Spinner />
+                <S.Spinner data-testid="spinner" />
                 <S.Title>Carregando...</S.Title>
             </S.LoadingContainer>
         </S.Overlay>

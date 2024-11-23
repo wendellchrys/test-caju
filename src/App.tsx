@@ -2,7 +2,7 @@ import { Toaster } from 'react-hot-toast';
 
 import Router from "~/router";
 
-import Header from "./components/Header";
+import { Header } from "./components/";
 import { StatusUpdateProvider } from './contexts/statusUpdateContext';
 
 function App() {

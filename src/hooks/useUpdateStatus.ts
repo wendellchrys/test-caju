@@ -6,7 +6,7 @@ import { useStatusUpdateContext } from "~/contexts/statusUpdateContext";
 
 type StatusKey = keyof typeof STATUS_LABELS;
 
-const apiUrl = import.meta.env.VITE_API_URL;
+const apiUrl = process.env.VITE_API_URL;
 
 export const useUpdateStatus = () => {
   const [isLoading, setIsLoading] = useState(false);
