@@ -6,7 +6,7 @@ import { Loading } from "~/components";
 import { useStatusUpdateContext } from "~/contexts/statusUpdateContext";
 import { RegistrationUser, registrationUserSchema } from "~/schemas/registrationUser";
 
-import { Columns } from "./components/";
+import { Columns } from "./components/Columns";
 import { SearchBar } from "./components/Searchbar";
 import * as S from "./styles";
 
