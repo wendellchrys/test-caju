@@ -25,6 +25,32 @@ A tela de `Cadastro` exibe um formulário simples que será utilizado para criar
 - maskCpf: útil criado para gerar a máscara do cpf enquanto o usuário digita os números
 - validateCpf: útil criado para fazer a validação do cpf
 
+## schemas
+
+- newUser: schema para padronizar a criação de um novo usuário
+- registrationUser: schema para padronizar a leitura dos usuários
+
+## hooks
+
+- useDeleteRegistration: hook criado para centralizar a exclusão de um registro
+- useUpdateStatus: hook criado para centralizar a atualização de status de um registro
+- useGoToHome: hook criado para efetuar um redirecionamento para a Home
+
+## contexts
+
+- status: contexto criado para atualizar verificar sempre que um status for atualizado, executar uma atualização no dashboard de forma automática
+
+## components
+
+- ConfirmationModal: Componente criado para exibir um modal de confirmação para alteração de status do modal ou para exclusão
+- Loading: Componente criado para executar um Loading enquanto as operações são carregadas
+- Button: Refatoração para aceitar propriedade "isSmall" e "bgColor", assim não seria necessário 2 componentes
+
+
+## Outras Mudanças
+
+- Foi efetuado outras mudanças, refatoração de componentes já existentes para deixar o código mais padronizado com os componentes que foram criados e para aproveitamento de código
+
 ## Apresentanção do problema
 
 O desafio é aprimorar o código existente e implementar as funcionalidades que estão incompletas, use a sua experiência para identificar e propor soluções para os problemas encontrados.
