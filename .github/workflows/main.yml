@@ -1,4 +1,4 @@
-name: Ftp Deploy Cpanel
+name: 🚀 Caju Build
 on:
   push:
     branches:
@@ -38,3 +38,4 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: /
