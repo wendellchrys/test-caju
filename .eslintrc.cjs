@@ -18,6 +18,9 @@ module.exports = {
         paths: ['src'],
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
+      typescript: {
+        project: './tsconfig.json',
+      },
     },
   },
   rules: {
