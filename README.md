@@ -49,6 +49,7 @@ A tela de `Cadastro` exibe um formulário simples que será utilizado para criar
 
 ## Outras Mudanças
 
+- Ci/Cd: Foi criado uma automação para deploy automático do frontend em um servidor cpanel
 - Foi efetuado outras mudanças, refatoração de componentes já existentes para deixar o código mais padronizado com os componentes que foram criados e para aproveitamento de código
 
 ## Apresentanção do problema
