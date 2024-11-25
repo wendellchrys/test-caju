@@ -4,7 +4,7 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 
 import { useDeleteRegistration } from "~/hooks/useDeleteRegistration";
 import { useUpdateStatus } from "~/hooks/useUpdateStatus";
-import { RegistrationUser } from "~/schemas/registrationUserSchema";
+import { RegistrationUser } from "~/schemas/registrationUser";
 
 import { RegistrationCard } from ".";
 
@@ -20,6 +20,7 @@ const mockUseUpdateStatus = useUpdateStatus as jest.Mock;
 describe("Components:: RegistrationCard", () => {
     const mockRegistration: RegistrationUser = {
         id: "1",
+        cpf: "96120683488",
         employeeName: "Nome Sobrenome",
         email: "nome@dominio.com",
         admissionDate: "2021-01-01",
@@ -75,7 +76,10 @@ describe("Components:: RegistrationCard", () => {
     });
 
     it("Should call updateStatus with REVIEW when Revisar novamente button is clicked", async () => {
-        const mockRegistrationApproved = { ...mockRegistration, status: "APPROVED" };
+        const mockRegistrationApproved: RegistrationUser = {
+            ...mockRegistration,
+            status: "APPROVED",
+        };
         render(<RegistrationCard data={mockRegistrationApproved} />);
         fireEvent.click(screen.getByText("Revisar novamente"));
         fireEvent.click(screen.getByText("Sim"));
@@ -84,6 +88,7 @@ describe("Components:: RegistrationCard", () => {
             expect(mockUpdateStatus).toHaveBeenCalledWith({ ...mockRegistrationApproved }, "REVIEW");
         });
     });
+
 
     it("Should call deleteRegistration when trash icon is clicked", async () => {
         render(<RegistrationCard data={mockRegistration} />);
