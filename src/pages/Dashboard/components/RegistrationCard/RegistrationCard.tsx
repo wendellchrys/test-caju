@@ -10,7 +10,7 @@ import { Button } from "~/components";
 import { ConfirmationModal } from "~/components/ConfirmationModal";
 import { useDeleteRegistration } from "~/hooks/useDeleteRegistration";
 import { useUpdateStatus } from "~/hooks/useUpdateStatus";
-import { RegistrationUser } from "~/schemas/registrationUserSchema";
+import { RegistrationUser } from "~/schemas/registrationUser";
 
 import * as S from "./styles";
 
